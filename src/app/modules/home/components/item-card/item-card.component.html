@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-img-top">
+    <img [src]="product.image" alt="Card image cap" />
+  </div>
+  <div class="body">
+    <div class="title">
+      <p>{{product.category}}</p>
+    </div>
+    <h6></h6>
+    <p>{{product.title}}</p>
+    <h4>{{product.price | currency}}</h4>
+    <button (click)="addProductToCart()">Add to cart</button>
+  </div>
+</div>

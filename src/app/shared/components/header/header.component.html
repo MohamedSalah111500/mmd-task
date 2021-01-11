@@ -1,0 +1,51 @@
+<!--  header start-->
+<div class="header">
+    <div class="container">
+        <!-- top header start-->
+        <div class="row align-items-center">
+            <div class="col-lg-9 col-8 flex user-controls align-center">
+                <div class="contact">
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                    {{User?.phone}}
+                </div>
+                <div class="contact ">
+                    <fa-icon [icon]="faEnvelope"></fa-icon>
+                    {{User?.email}}
+                </div>
+            </div>
+            <div class="col-lg-3 col-4 flex user-controls align-center justify-content-end">
+                <div class="contact text-cente" [routerLink]="['/login']">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    {{User?.username}}
+                </div>
+                <div class="cart text-center sm-show">
+                    <fa-icon [icon]="faCart"></fa-icon>
+                    <span class="badg" *ngIf="itemsLenth">{{itemsLenth}}</span>
+                   <p>My Cart</p> 
+                </div>
+                
+            </div>
+        </div>
+        <!-- top header end-->
+
+        <div class="row align-items-center mt-5">
+            <div class="col col-lg-3 col-md-3 col-12">
+                <h2>MMD-Task</h2>
+            </div>
+            <div class="col col-lg-7 col-md-6 col-12">
+                <app-search-input [categories]="categories"></app-search-input>
+            </div>
+            <div class="col col-lg-2 col-md-2 col-12 flex user-controls align-center justify-content-end">
+                <div class="cart text-center lg-show">
+                    <fa-icon [icon]="faCart"></fa-icon>
+                    <span class="badg" *ngIf="itemsLenth">{{itemsLenth}}</span>
+                   <p>My Cart</p> 
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+<app-links></app-links>
+
+<!--  header end-->

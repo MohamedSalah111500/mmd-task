@@ -1,0 +1,87 @@
+@import "../../../../scss/abstracts/variables";
+
+.header {
+  background: $darkGrey-color;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+    border-bottom: 2px solid $secondary-color;
+ 
+.sm-show{
+  display: none;
+}
+  .contact,
+  .cart {
+    font-size: 12px;
+    margin: 5px;
+    cursor: pointer;
+    .ng-fa-icon {
+      color: $secondary-color;
+    }
+  }
+  .cart {
+    .badg {
+      background-color: #c22828;
+      border-radius: 50%;
+      height: 15px;
+      display: inline-block;
+      margin-left: -5px;
+      width: 15px;
+      font-size: 10px;
+    }
+    p {
+      margin: 3px;
+    }
+    .ng-fa-icon {
+      color: white;
+    }
+  }
+
+  ul a {
+    display: inline;
+    margin-inline-end: 50px;
+    position: relative;
+    text-decoration: none;
+    color: $darkGrey-color;
+
+    &.active {
+      font-weight: bolder;
+      transition: 0.1s ease-in-out 0s;
+
+      &::after {
+        content: " ";
+        height: 3px;
+        width: 28px;
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+        background-color: #0f77b2;
+      }
+    }
+  }
+
+  
+}
+
+
+.flex{
+  display: flex;
+}
+.lg-show{
+display: block;
+}
+
+@media only screen and (max-width: 597px) {
+  .flex{
+    display: block !important;
+  }
+  .sm-show{
+    display: block!important;
+  }
+  .lg-show{
+    display: none !important;
+  }
+  
+
+}

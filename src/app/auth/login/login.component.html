@@ -1,0 +1,56 @@
+<div class="login-page">
+    <div class="form">
+
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <input formControlName="username" type="text" placeholder="username" />
+            <!-- errors block -->
+            <div *ngIf="loginForm.controls['username'].invalid && 
+            (loginForm.controls['username'].dirty || loginForm.controls['username'].touched)" class="errorsWraper">
+                <small *ngIf="loginForm.controls['username'].errors.required">
+                    Please enter username
+                </small>
+            </div>
+
+            <input formControlName="email" type="email" placeholder="email" />
+            <!-- errors block -->
+            <div *ngIf="loginForm.controls['email'].invalid && 
+                        (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)"
+                class="errorsWraper">
+                <small *ngIf="loginForm.controls['email'].errors.required">
+                    Please enter email
+                </small>
+            </div>
+            <input formControlName="address" type="text" placeholder="address" />
+
+            <input formControlName="phone" type="text" placeholder="phone" />
+            <!-- errors block -->
+            <div *ngIf="loginForm.controls['phone'].invalid && 
+             (loginForm.controls['phone'].dirty || loginForm.controls['phone'].touched)" class="errorsWraper">
+                <small *ngIf="loginForm.controls['phone'].errors.required">
+                    Please enter phone
+                </small>
+                <small *ngIf="loginForm.controls['phone'].errors.pattern">
+                    Please enter right pattern
+                </small>
+            </div>
+            <input formControlName="password" type="password" #password minlength="6" placeholder="password" />
+            <!-- errors block -->
+            <div *ngIf="loginForm.controls['password'].invalid && 
+             (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="errorsWraper">
+                <small *ngIf="loginForm.controls['password'].errors.required">
+                    Please enter password
+                </small>
+                <small *ngIf="!loginForm.controls['password'].errors.required && password.value.length < 6">
+                    Please password minLength is 6
+                                </small>
+                                <small *ngIf="!loginForm.controls['password'].errors.required && password.value.length >32 ">
+                                    Please password maxLength is 32
+                </small>
+            </div>
+            <button [disabled]="!loginForm.valid">login</button>
+            <p class="message">you can login using username, email address, phone number, and password
+                <a [routerLink]="['/']">or back to home</a>
+            </p>
+        </form>
+    </div>
+</div>

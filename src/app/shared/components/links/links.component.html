@@ -1,0 +1,14 @@
+<div class="links d-flex align-center">
+
+    <div class="container">
+        <div class="row align-items-center ">
+            <div class="col-12  ">
+                <ul>
+                    <li *ngFor="let link of links" routerLinkActive="active"   
+                    [routerLink]="[link.url]">{{link.name}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</div>

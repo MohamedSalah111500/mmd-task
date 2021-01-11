@@ -1,0 +1,12 @@
+<app-header></app-header>
+<div class="card item-card card-details">
+    <div class="container">
+        <app-empty-state *ngIf="!productsFiltered?.length && !isLoading"></app-empty-state>
+        <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+        <div class="row align-items-center">
+            <div class="col-lg-4 col-md-4 col-12" *ngFor="let product of productsFiltered">
+                <app-item-card [product]="product"></app-item-card>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>

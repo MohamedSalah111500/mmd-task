@@ -1,0 +1,29 @@
+@import "../../../../scss/abstracts/variables";
+
+.links{
+    height: 50px;
+    border-bottom: 1px solid #d2d2d2;
+    ul li {
+    display: inline;
+    margin-inline-end: 35px;
+    position: relative;
+    text-decoration: none;
+    color: $darkGrey-color;
+    cursor: pointer;
+
+    &.active {
+      font-weight: bolder;
+      transition:  0.1s ease-in-out 0s;
+
+      &::after {
+        content: " ";
+        height: 3px;
+        width: 28px;
+        position: absolute;
+        bottom: -5px;
+        left: 0px;
+        background-color: #e61a1a;
+      }
+    }
+  }
+}
